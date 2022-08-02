@@ -1,6 +1,9 @@
 import React from 'react'
 import { useForm } from '../../Hooks/useForm'
 
+// import css module
+import styles from './style/todoAdd.module.css'
+
 export const TodoAdd = ({ handleAddTodo, dispatch }) => {
   const [{ description }, handleInputChange, reset] = useForm({
     description: ''
@@ -21,25 +24,22 @@ export const TodoAdd = ({ handleAddTodo, dispatch }) => {
     reset()
   }
   return (
-    <div className="form-input">
-      <h4> Agregar Tarea... </h4>
-      <hr />
+    <div className={styles.container}>
+      <h2> Add Todo </h2>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="description"
-          className="form-control"
-          placeholder="Anotar..."
-          autoComplete="off"
-          value={description}
-          onChange={handleInputChange}
-        />
-        <button
-          type="submit"
-          className="btn btn-outline-primary mt-1 btn-block"
-        >
-          Agregar
-        </button>
+        <div className={styles.boxAddTitle}>
+          <label htmlFor="titleForm">Add Title:</label>
+          <input
+            id="titleForm"
+            type="text"
+            name="description"
+            placeholder="Anotar..."
+            autoComplete="off"
+            value={description}
+            onChange={handleInputChange}
+          />
+        </div>
+        <button type="submit">Agregar</button>
       </form>
     </div>
   )

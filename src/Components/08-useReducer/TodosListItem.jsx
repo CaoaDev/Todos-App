@@ -1,5 +1,7 @@
 import React from 'react'
 
+// import style module
+import styles from './style/todoListItem.module.css'
 export const TodosListItem = ({
   todo,
   index,
@@ -8,19 +10,24 @@ export const TodosListItem = ({
   dispatch
 }) => {
   return (
-    <li key={todo.id} className="list-group-item">
+    <article key={todo.id} className={styles.boxList}>
       <p
         className={`${todo.done && 'complete'}`}
         onClick={() => handleToggle(dispatch, todo.id)}
       >
         {index + 1}. {todo.desc}
       </p>
+      <textarea
+        className={`${todo.done && 'complete'}`}
+        onClick={() => handleToggle(dispatch, todo.id)}
+      >
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas aliquid
+      </textarea>
       <button
-        className="btn btn-outline-danger"
         onClick={() => handleDelete(dispatch, todo.id)}
       >
         Borrar
       </button>
-    </li>
+    </article>
   )
 }

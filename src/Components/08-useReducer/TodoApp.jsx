@@ -1,10 +1,14 @@
 import React, { useEffect, useReducer } from 'react'
+
+// import components
 import { todoReducer } from './todoReducer'
 import { TodoList } from './TodoList'
 import { TodoAdd } from './TodoAdd'
 import { handleAddTodo, handleDelete, handleToggle } from './constTodasReducer'
 
 import '../08-useReducer/styles.css'
+//import style module
+import styles from './style/todoApp.module.css'
 
 const init = () => {
   return JSON.parse(localStorage.getItem('todos')) || []
@@ -24,14 +28,16 @@ export const TodoApp = () => {
 
   // console.log( description );
   return (
-    <div>
-      <h1>
-        <center> Agenda de Tareas. ( {todos.length} )</center>
-      </h1>
-      <hr />
+    <div className={styles.container}>
+      <div className={styles.boxTitle}>
+        <h1 className={styles.title}>
+          Agenda de Tareas
+          <span className={styles.titleSpanCount}>{todos.length}</span>
+        </h1>
+      </div>
+      <div>
+        <TodoAdd handleAddTodo={handleAddTodo} dispatch={dispatch} />
 
-      <div className="row">
-        <div className="col-7" />
         {todos.length > 0 ? (
           <TodoList
             todos={todos}
@@ -42,10 +48,6 @@ export const TodoApp = () => {
         ) : (
           <p>No se encontró Información...</p>
         )}
-
-        <div className="col-5" />
-
-        <TodoAdd handleAddTodo={handleAddTodo} dispatch={dispatch} />
       </div>
     </div>
   )

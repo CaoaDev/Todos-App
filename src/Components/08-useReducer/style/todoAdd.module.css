@@ -1,0 +1,18 @@
+.container {
+  background-color: whitesmoke;
+  margin: 2rem 0 3rem 0;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+
+.container h2 {
+  color: burlywood;
+  margin-bottom: 1.5rem;
+}
+
+.boxAddTitle {
+  border: 2px solid blue;
+  display: flex;
+  column-gap: 1rem;
+}

@@ -1,9 +1,12 @@
 import React from 'react'
 import { TodosListItem } from '../../Components/08-useReducer/TodosListItem'
 
+// imoprt style codule
+import styles from './style/todoList.module.css'
+
 export const TodoList = ({ todos, handleDelete, handleToggle, dispatch }) => {
   return (
-    <ul className="list-group list-group-flush">
+    <section className={styles.section}>
       {todos.map((todo, index) => (
         <TodosListItem
           key={todo.id}
@@ -14,6 +17,6 @@ export const TodoList = ({ todos, handleDelete, handleToggle, dispatch }) => {
           dispatch={dispatch}
         />
       ))}
-    </ul>
+    </section>
   )
 }
