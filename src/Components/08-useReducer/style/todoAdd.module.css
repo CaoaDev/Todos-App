@@ -1,6 +1,6 @@
 .container {
 	width: clamp(320px, 80%, 800px);
-	background-color: whitesmoke;
+	background-color: #FBF8F8;
 	margin: 2rem auto 3rem auto;
 	padding: 1rem;
 	text-align: center;
@@ -28,13 +28,13 @@
 	text-align: center;
 	font-weight: 500;
 	border-radius: 5px;
-	background-color: #65B5E7;
+	background-color: #65b5e7;
 }
 
 .boxAddTitle input:focus {
 	border: none;
 	outline: none;
-	background-color: #65B5a4;
+	background-color: #65b5a4;
 }
 
 .boxAddTitle label {
@@ -58,12 +58,93 @@
 	font-size: 16px;
 	color: white;
 	background-color: #0074d9;
-  border: 1px solid whitesmoke;
+	border: 1px solid whitesmoke;
 	padding: 0 0.5rem;
 	border-radius: 4px;
 }
 
 /* Textarea */
 .boxTextarea {
-  outline: 1px solid blue;
+	position: relative;
+	margin-bottom: 1.5rem;
+	line-height: initial;
+}
+
+.boxTextarea textarea {
+	display: block;
+	width: 100%;
+	background-color: #65b5e7;
+	height: 7rem;
+	border: none;
+	outline: none;
+	color: #383838;
+	font-weight: 500;
+	padding: 1rem;
+	text-align: center;
+	border-radius: 5px;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.boxTextarea textarea:focus {
+	outline: none;
+	background-color: #65b5a4;
+}
+
+.boxTextarea span {
+	position: absolute;
+	color: #282828;
+	font-weight: 500;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.boxTextarea textarea,
+.boxTextarea span {
+	transition: all 0.3s ease;
+}
+
+.boxTextarea textarea:focus + span,
+.boxTextarea textarea:not(:placeholder-shown) + span {
+	top: -0.5rem;
+  left: 70%;
+	font-size: 16px;
+	color: white;
+	background-color: #0074d9;
+	border: 1px solid whitesmoke;
+	padding: 3px 0.5rem;
+	border-radius: 4px;
+}
+
+.boxTextarea textarea:focus,
+.boxTextarea textarea:not(:placeholder-shown){
+  margin-top: 1.5rem;
+	height: 6.5rem;
+}
+
+/* Button submit */
+.buttonSubmit {
+  border: 2px solid #0074d9;
+  border-radius: 0.5rem;
+  padding: 3px 1rem;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  margin: auto;
+}
+
+.buttonSubmit span {
+  font-weight: bold;
+  color: #0074d9;
+}
+
+.buttonSubmit span:nth-child(1) {
+  margin-right: 5px;
+}
+
+.iconAdd {
+  width: 15px;
+  height: 15px;
+  fill: #D57151;
 }
