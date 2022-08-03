@@ -25,21 +25,24 @@ export const TodoAdd = ({ handleAddTodo, dispatch }) => {
   }
   return (
     <div className={styles.container}>
-      <h2> Add Todo </h2>
+      <h2>Add Todo</h2>
       <form onSubmit={handleSubmit}>
         <div className={styles.boxAddTitle}>
-          <label htmlFor="titleForm">Add Title:</label>
           <input
-            id="titleForm"
             type="text"
+            id="titleForm"
             name="description"
-            placeholder="Anotar..."
-            autoComplete="off"
+            placeholder=' '
             value={description}
             onChange={handleInputChange}
           />
+          <label htmlFor="titleForm">Add Title</label>
         </div>
-        <button type="submit">Agregar</button>
+        <div className={styles.boxTextarea}>
+          <textarea placeholder="hola verga"></textarea>
+          <span>hola</span>
+        </div>
+        <button type="submit">Add</button>
       </form>
     </div>
   )

@@ -1,12 +1,21 @@
+:root {
+  --bg-box: #FEFDCE;
+  --bg-hover: #F1EF90;
+  --color-shadow: rgba(0, 0, 0, 0.4);
+  --dark-primary: #282828;
+  --dark-second: #383838;
+  --red-rose: #cb0e40;
+  --white: #ffffff;
+}
 .boxList {
-  background-color: #FEFDCE;
+  background-color: var(--bg-box);
   width: clamp(250px, 30%, 400px);
   height: 250px;
   padding: 1rem;
   box-shadow:
-    8px 0 15px rgba(0, 0, 0, 0.4),
-    -8px 0 15px rgba(0, 0, 0, 0.4),
-    0 8px 15px rgba(0, 0, 0, 0.4);
+    8px 0 15px var(--color-shadow),
+    -8px 0 15px var(--color-shadow),
+    0 8px 15px var(--color-shadow);
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -14,8 +23,13 @@
   position: relative;
 }
 
+.boxList:hover,
+.boxList:hover > textarea {
+  background-color: var(--bg-hover);
+}
+
 .boxList p {
-  color: #282828;
+  color: var(--dark-primary);
   text-transform: capitalize;
   font-size: 1.5rem;
   font-weight: 500;
@@ -29,7 +43,7 @@
   text-align: justify;
   border: none;
   font-style: italic;
-  color: #383838;
+  color: var(--dark-second);
 }
 
 .boxList textarea:focus {
@@ -37,15 +51,27 @@
   outline: none;
 }
 
-.boxList button {
+/* boton para elimina */
+.button {
   margin: 0 auto 0 auto;
-  border: 2px solid #282828;
+  border: 2px solid var(--dark-primary);
   border-radius: 5px;
-  background-color: white;
-  color: #282828;
+  background-color: transparent;
+  color: var(--dark-primary);
+  display: flex;
+  align-items: center;
+  column-gap: 0.3rem;
 }
 
-.boxList button:hover {
-  border-color: #0074d9;
-  color: #0074d9;
+.button:hover,
+.button:hover > .trash {
+  background-color: var(--white);
+  border-color: var(--red-rose);
+  color: var(--red-rose);
+  fill: var(--red-rose);
+}
+
+.trash {
+  width: 15px;
+  fill: var(--dark-primary);
 }

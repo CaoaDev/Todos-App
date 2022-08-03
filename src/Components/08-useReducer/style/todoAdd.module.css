@@ -1,18 +1,69 @@
 .container {
-  background-color: whitesmoke;
-  margin: 2rem 0 3rem 0;
-  padding: 1rem;
-  text-align: center;
-  border-radius: 0.5rem;
+	width: clamp(320px, 80%, 800px);
+	background-color: whitesmoke;
+	margin: 2rem auto 3rem auto;
+	padding: 1rem;
+	text-align: center;
+	border-radius: 0.5rem;
 }
 
 .container h2 {
-  color: burlywood;
-  margin-bottom: 1.5rem;
+	color: #1d1d53;
+	margin-bottom: 1.5rem;
 }
 
+/* Input para agregar Titulo */
 .boxAddTitle {
-  border: 2px solid blue;
-  display: flex;
-  column-gap: 1rem;
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+	position: relative;
+}
+
+.boxAddTitle input {
+	width: 100%;
+	padding: 5px 1rem;
+	outline: none;
+	border: none;
+	text-align: center;
+	font-weight: 500;
+	border-radius: 5px;
+	background-color: #65B5E7;
+}
+
+.boxAddTitle input:focus {
+	border: none;
+	outline: none;
+	background-color: #65B5a4;
+}
+
+.boxAddTitle label {
+	position: absolute;
+	color: #282828;
+	font-weight: 500;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.boxAddTitle input,
+.boxAddTitle label {
+	transition: all 0.3s ease;
+}
+
+.boxAddTitle input:focus + label,
+.boxAddTitle input:not(:placeholder-shown) + label {
+	top: -0.5rem;
+	left: 30%;
+	font-size: 16px;
+	color: white;
+	background-color: #0074d9;
+  border: 1px solid whitesmoke;
+	padding: 0 0.5rem;
+	border-radius: 4px;
+}
+
+/* Textarea */
+.boxTextarea {
+  outline: 1px solid blue;
 }

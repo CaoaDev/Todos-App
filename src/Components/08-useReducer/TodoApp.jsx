@@ -29,12 +29,10 @@ export const TodoApp = () => {
   // console.log( description );
   return (
     <div className={styles.container}>
-      <div className={styles.boxTitle}>
-        <h1 className={styles.title}>
-          Agenda de Tareas
-          <span className={styles.titleSpanCount}>{todos.length}</span>
-        </h1>
-      </div>
+      <h1 className={styles.title}>
+        <span>Agenda de Tareas</span>
+        <span>{todos.length}</span>
+      </h1>
       <div>
         <TodoAdd handleAddTodo={handleAddTodo} dispatch={dispatch} />
 
